@@ -15,7 +15,7 @@ URET is a solution that enables users to evaluate their models against adversari
 1. Select/Define one or more **Data Transformers**.
 2. Select one or more **Explorer Configurationss** and define its exploration parameters.
 3. Load a pre-trained model, the set of samples to be adversarially transformed, and (optionally) a feature extractor.
-4. Define any **data constraints** or *data interdependencies**
+4. Define any **data constraints** or **data interdependencies**
 5. Run URET
 
 To ease evaluation, URET exposes a configuration file interface.
