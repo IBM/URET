@@ -1,0 +1,115 @@
+explorer_params:
+    type: "simanneal"
+    predict_function_name: "predict" #Name of function to get output prediction. Defaults to predict
+    init_args:
+        scoring_alg: "model_loss"
+        restarts: 1
+        attack_time: 0.0167
+        min_transform_i_sampled: 1
+        max_transform_i_sampled: 2
+ranker_params:
+    type: "Random" # This has to be random
+    init_args:
+        multi_feature_input: True
+        num_actions: 1
+transformer_params:
+    - data_type: "category"
+      feature_index: 
+          - 12
+          - 13
+          - 14
+          - 15
+          - 16
+          - 17
+          - 18
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: 7
+                    is_onehot: True
+    - data_type: "category"
+      feature_index: 
+          - 19
+          - 20
+          - 21
+          - 22
+          - 23
+          - 24
+          - 25
+          - 26
+          - 27
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: 9
+                    is_onehot: True
+    - data_type: "category"
+      feature_index: 
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: 6
+                    is_onehot: True
+    - data_type: "category"
+      feature_index: 
+          - 0
+          - 1
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: 2
+                    is_onehot: True
+    - data_type: "category"
+      feature_index: 
+          - 33
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: [0,1]
+    - data_type: "category"
+      feature_index: 
+          - 34
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: [0,1]
+    - data_type: "category"
+      feature_index: 
+          - 4
+          - 5
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: 2
+                    is_onehot: True
+    - data_type: "category"
+      feature_index: 
+          - 2
+          - 3
+      init_args:
+          input_constraints: {}
+          subtransformer_args:
+              - name: "CategoryModifier"
+                init_args:
+                    categories: 2
+                    is_onehot: True
