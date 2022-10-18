@@ -1,6 +1,6 @@
 # Universal Robustness Evaluation Toolkit (for Evasion) - URET
 
-This repository will contain the code for adversarial example generation tools described in:
+This repository contains the code for adversarial example generation tools described in:
 
 **Universal Robustness Evaluation Toolkit (for Evasion)**
 
