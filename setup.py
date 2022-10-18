@@ -33,7 +33,7 @@ def get_version(rel_path):
 setup(
     name="uret",
     version=get_version("uret/__init__.py"),
-    description="Toolkit for generic adversarial machine learning evaluationsI.",
+    description="Toolkit for generic adversarial machine learning evaluations.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Kevin Eykholt",
