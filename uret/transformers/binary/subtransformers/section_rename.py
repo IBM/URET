@@ -1,7 +1,6 @@
 from uret.transformers import SubTransformer
 from uret.transformers.binary.subtransformers import binary_to_bytez
 
-import lief
 import random
 from copy import deepcopy
 
@@ -36,6 +35,8 @@ class SectionRename(SubTransformer):
         :param transformation_value: (length, distribution) to append
         :return: A transformed input and modified transformation record
         """
+        import lief # lgtm [py/repeated-import]
+
         random.seed(self.seed)
         binary = lief.PE.parse(list(x))
 

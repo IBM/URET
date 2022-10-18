@@ -1,25 +1,12 @@
 from uret.transformers import SubTransformer
 from uret.transformers.binary.subtransformers import binary_to_bytez
 
-import lief
 import random
 from copy import deepcopy
 
 
 class SectionAdd(SubTransformer):
     name = "SectionAdd"
-
-    type_mapper = {
-        "bss": lief.PE.SECTION_TYPES.BSS,
-        "data": lief.PE.SECTION_TYPES.DATA,
-        "export": lief.PE.SECTION_TYPES.EXPORT,
-        "idata": lief.PE.SECTION_TYPES.IDATA,
-        "relocation": lief.PE.SECTION_TYPES.RELOCATION,
-        "resource": lief.PE.SECTION_TYPES.RESOURCE,
-        "text": lief.PE.SECTION_TYPES.TEXT,
-        "tls": lief.PE.SECTION_TYPES.TLS_,
-        "unknown": lief.PE.SECTION_TYPES.UNKNOWN,
-    }
 
     def __init__(self, length=[6, 12], types=None, transformation_range=None, seed=None, subtransformer_index=None):
         """
@@ -50,6 +37,19 @@ class SectionAdd(SubTransformer):
                 lief.PE.SECTION_TYPES.UNKNOWN,
             ]
         else:
+            import lief # lgtm [py/repeated-import]
+            type_mapper = {
+                "bss": lief.PE.SECTION_TYPES.BSS,
+                "data": lief.PE.SECTION_TYPES.DATA,
+                "export": lief.PE.SECTION_TYPES.EXPORT,
+                "idata": lief.PE.SECTION_TYPES.IDATA,
+                "relocation": lief.PE.SECTION_TYPES.RELOCATION,
+                "resource": lief.PE.SECTION_TYPES.RESOURCE,
+                "text": lief.PE.SECTION_TYPES.TEXT,
+                "tls": lief.PE.SECTION_TYPES.TLS_,
+                "unknown": lief.PE.SECTION_TYPES.UNKNOWN,
+            }
+
             self.types = []
             for t in types:
                 if t in type_mapper.keys():
@@ -72,6 +72,8 @@ class SectionAdd(SubTransformer):
         :param transformation_value: type of section to add
         :return: A transformed input and modified transformation record
         """
+        import lief # lgtm [py/repeated-import]
+
         random.seed(self.seed)
         binary = lief.PE.parse(list(x))
 

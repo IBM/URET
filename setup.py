@@ -9,13 +9,10 @@ with open("README.md", "r") as fh:
 install_requires = [
     "numpy>=1.18.0",
     "scipy>=1.4.1",
-    "scikit-learn>=0.22.2,<1.1.0",
+    "scikit-learn>=0.22.2",
     "setuptools",
     "tqdm",
     "simanneal",
-    "lief",
-    "pandas",
-    "tensorflow",
 ]
 
 
@@ -36,7 +33,7 @@ def get_version(rel_path):
 setup(
     name="uret",
     version=get_version("uret/__init__.py"),
-    description="Toolkit for generic adversarial machine learning evaluation.",
+    description="Toolkit for generic adversarial machine learning evaluationsI.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Kevin Eykholt",
@@ -46,6 +43,12 @@ setup(
     url="https://github.com/IBM/URET",
     license="MIT",
     install_requires=install_requires,
+    extras_require={
+        "all": ["lief", "pandas", "tensorflow", "keras", "h5py", "keras-rl"],
+        "binary": ["lief"],
+        "rl": ["tensorflow", "keras", "h5py", "keras-rl"],
+        "non-framework": ["pandas"]
+    },
     packages=find_packages(),
     include_package_data=True,
 )

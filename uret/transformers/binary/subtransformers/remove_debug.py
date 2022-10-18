@@ -1,7 +1,6 @@
 from uret.transformers import SubTransformer
 from uret.transformers.binary.subtransformers import binary_to_bytez
 
-import lief
 from copy import deepcopy
 
 
@@ -30,6 +29,7 @@ class RemoveDebug(SubTransformer):
         :param transformation_value: Not used
         :return: A transformed input and modified transformation record
         """
+        import lief # lgtm [py/repeated-import]
 
         binary = lief.PE.parse(list(x))
 
@@ -71,6 +71,7 @@ class RemoveDebug(SubTransformer):
 
         :return: If action is possible and the transformation value. The effect on the record is not used
         """
+        import lief # lgtm [py/repeated-import]
 
         binary = lief.PE.parse(list(x))
 
@@ -87,6 +88,8 @@ class RemoveDebug(SubTransformer):
 
         :return: A list of transformation values
         """
+        import lief # lgtm [py/repeated-import]
+
         binary = lief.PE.parse(list(x))
 
         for i, e in enumerate(binary.data_directories):

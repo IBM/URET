@@ -1,6 +1,5 @@
 from uret.transformers import SubTransformer
 
-import lief
 import random
 import os
 import tempfile

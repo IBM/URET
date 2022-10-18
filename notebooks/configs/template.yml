@@ -1,0 +1,26 @@
+explorer_params: # Contains information to create the explorer
+    type: "<name of explorer module to use>"
+    predict_function_name: "<The function in the model object that returns the class probabilities. Defaults to predict>"
+    init_args: # Define the keyword arguments here except for dependencies for the explorer module
+        scoring_alg: "model_loss"
+        scoring_function: null
+        target_label: null
+ranker_params: # Contains information to create the ranking algorithm
+    type: "<name of ranking algorithm to use>"
+    init_args: # Define the keyword arguments here for the ranker module
+        multi_feature_input: False
+transformer_params: # A list of transformers to initialize for the ranker
+    - data_type: "<name of the datatype module to use>"
+      input_processor_name: "<If required, this names the user defined function necessary to preprocess the datatype>" # Name of function. This should be created by the user externally. Set to null if not needed
+      init_args: # Contains information to create the transformer.
+          input_constraints: {} # adds transformer constraints
+          subtransformer_args:
+              - name: "<subtransformer module name 1>"
+              - name: "<subtransformer module name 1>"
+dependency_params: # Contains information on feature dependencies to enforce. Normally, this is used with multi-feature inputs
+    dependency_path: "<Name of *.py file in utils.dependencies that contains dependency functions. Defaults to 'defeault'>"
+    dependencies:
+        - name: "<Name of dependcy function>"
+        - args: # Fixed arguments to use when calling the dependencies. e.g. Feature indicies the function modifies/reads
+           arg1: "<arg value>"
+           agr2: "<arg value>"

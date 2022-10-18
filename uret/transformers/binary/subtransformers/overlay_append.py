@@ -1,7 +1,6 @@
 from uret.transformers import SubTransformer
 from uret.transformers.binary.subtransformers import binary_to_bytez
 
-import lief
 import random
 import numpy as np
 
@@ -50,6 +49,8 @@ class OverlayAppend(SubTransformer):
         :param length: length of content to append
         :return: A transformed input and modified transformation record
         """
+        import lief # lgtm [py/repeated-import]
+
         random.seed(self.seed)
 
         if transformation_value is None:

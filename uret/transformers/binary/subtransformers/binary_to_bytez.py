@@ -1,8 +1,9 @@
-import lief
+
 import array
 
-
 def binary_to_bytez(binary, dos_stub=False, imports=False):
+    import lief # lgtm [py/repeated-import]
+
     # Write modified binary to disk
     builder = lief.PE.Builder(binary)
     builder.build_imports(imports)
