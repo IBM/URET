@@ -196,6 +196,10 @@ class SimulatedAnnealingSearchGraphExplorer(GraphExplorer, simanneal.Annealer):
                     current_transformation_records=transformation_record,
                     transformer_index=i,
                 )
+                
+                if len(return_values) == 0:
+                    return
+
                 indicies, _, _, transformed_state, transformation_record, _ = return_values[
                     0
                 ]  # We only expect 1 return value

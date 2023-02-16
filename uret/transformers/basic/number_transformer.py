@@ -102,7 +102,7 @@ class NumberTransformer(Transformer):
                     clipped_x,
                     original_value - (original_value * self.input_constraints["eps"]["value"]),
                     original_value
-                    + (self.input_constraints["bounds"].get("upper") * self.input_constraints["eps"]["value"]),
+                    + (original_value * self.input_constraints["eps"]["value"]),
                 )
         if "bounds" in self.input_constraints:
             method = self.input_constraints["bounds"]["method"]
