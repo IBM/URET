@@ -6,6 +6,10 @@ This repository contains the code for adversarial example generation tools descr
 
 *Kevin Eykholt, Taesung Lee, Doug Schales, Jiyong Jang, Ian Molloy, Masha Zorin*
 
+# Installation
+
+You can install URET from Pypi or run `pip install -e .` in the top level directory. 
+
 ## Toolkit Description
 
 Machine learning models are known to be vulnerable to adversarial evasion attacks as illustrated by image classification models. Thoroughly understanding such attacks is critical in order to ensure the safety and robustness of critical AI tasks. However, most adversarial attacks are difficult to deploy against a majority of AI systems because they have focused on image domain with only few constraints. 
