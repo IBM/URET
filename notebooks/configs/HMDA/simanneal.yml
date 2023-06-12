@@ -6,6 +6,7 @@ explorer_params:
         attack_time: 0.0167
         min_transform_i_sampled: 1
         max_transform_i_sampled: 2
+        global_max_transforms: 2
 ranker_params:
     type: "Random" # This has to be random
     init_args:
