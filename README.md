@@ -52,12 +52,12 @@ Note that the simulated annealing search algorithm is only compatible with the R
 
 In `notebooks/`, we have included several notebooks to reproduce most of the HMDA results in the paper. We have also included the configuration files, model checkpoints, and HMDA samples used for adversarial example generation. Finally, there are pre-computed adversarial samples generated from each of the notebooks.
 
-HMDA_random.yml - This runs the naive random algorithm with a beam width of 5 and depth of 2.
-HMDA_brute.yml - This runs the Brute force algorithm with a beam width of 5 and depth of 2.
-HMDA_lookup.yml - This runs the Lookup table algorithm with a beam width of 5 and depth of 2.
-HMDA_simanneal.yml - This runs the simanneal algorithm with a max transform limit of 2.
+**HMDA_random.yml** - This runs the naive random algorithm with a beam width of 5 and depth of 2.
+**HMDA_brute.yml** - This runs the Brute force algorithm with a beam width of 5 and depth of 2.
+**HMDA_lookup.yml** - This runs the Lookup table algorithm with a beam width of 5 and depth of 2.
+**HMDA_simanneal.yml** - This runs the simanneal algorithm with a max transform limit of 2.
 
-HMDA_results.yml - This reports the sucess rate and adversage transformation rate of the generated samples.
+**HMDA_results.yml** - This reports the sucess rate and adversage transformation rate of the generated samples.
 
 Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. We have included a different setup.py file that can be copied to the top-level directory and installed using `pip install -e .`.
 
