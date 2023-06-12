@@ -48,7 +48,7 @@ Given the edge rankings/edges returned by the edge ranking algorith, the **searc
 
 Note that the simulated annealing search algorithm is only compatible with the Random edge ranking algorithm.
 
-# Notebook Example
+# Notebook Examples
 
 In `notebooks/`, we have included several notebooks to reproduce most of the HMDA results in the paper. We have also included the configuration files, model checkpoints, and HMDA samples used for adversarial example generation. Finally, there are pre-computed adversarial samples generated from each of the notebooks.
 
@@ -59,7 +59,14 @@ In `notebooks/`, we have included several notebooks to reproduce most of the HMD
 
 **HMDA_results.yml** - This reports the sucess rate and adversage transformation rate of the generated samples.
 
-Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. We have included a different setup.py file that can be copied to the top-level directory and installed using `pip install -e .`.
+## Notebook Setup
+
+Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. 
+
+1. `cp notebooks/setup.py .` - Copies the setup script for the notebooks to the top-level directory
+2. `pip install -e .` - Reinstalls URET with the downgraded libraries.
+
+After these steps, the notebooks should be runnable from the `notebooks/` directory.
 
 # Future Development
 
