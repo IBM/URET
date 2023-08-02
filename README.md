@@ -61,7 +61,7 @@ In `notebooks/`, we have included several notebooks to reproduce most of the HMD
 
 ## Notebook Setup
 
-Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. 
+Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. Also, make sure to use Python 3.8 or greater.
 
 1. `cp notebooks/setup.py .` - Copies the setup script for the notebooks to the top-level directory
 2. `pip install -e .` - Reinstalls URET with the downgraded libraries.
