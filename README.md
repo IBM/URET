@@ -2,7 +2,7 @@
 
 This repository contains the code for adversarial example generation tools described in:
 
-**Universal Robustness Evaluation Toolkit (for Evasion)**
+**[Universal Robustness Evaluation Toolkit (for Evasion)](https://www.usenix.org/system/files/usenixsecurity23-eykholt.pdf)**
 
 *Kevin Eykholt, Taesung Lee, Doug Schales, Jiyong Jang, Ian Molloy, Masha Zorin*
 
