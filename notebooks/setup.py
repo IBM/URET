@@ -15,6 +15,7 @@ install_requires = [
     "setuptools",
     "tqdm",
     "simanneal",
+    "traitlets==5.9.0",
     "notebook==6.5.4"
 ]
 
