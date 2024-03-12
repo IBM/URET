@@ -9,4 +9,6 @@ We've included some demo notebooks for generating HMDA adversarial examples. Fou
 
 **HMDA_results.yml** - This reports the sucess rate and adversage transformation rate of the generated samples.
 
-Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. We have included a different setup.py file that can be copied to the top-level directory and installed using `pip install -e .`.
+Note that the model checkpoints were generated with an older library. Therefore, to run these notebooks, you may need to downgrade some of the libaries in your environment. Specifically:
+- Use python 3.8
+- Copy the setup.py file into the top-level directory and install using `pip install -e .`.
